@@ -1,0 +1,14 @@
+<% 
+  var thisYear = new Date().getFullYear();
+  var copyright = setting.copyright;
+%>
+
+<footer class="flex-v-center">
+  <p>
+    © <%- copyright.since === thisYear ? copyright.since : (copyright.since + " - " + thisYear) %>
+    <a href="<%- copyright.site %>"><%- copyright.author %></a> 
+    | Design by <a href="http://viggoz.com" target="_blank">Viggo</a> 
+    | Power by <a href="https://hexo.io/" target="_blank">Hexo</a> 
+    & <a href="https://github.com/qinxs/hexo-theme-webstack-R/" target="_blank">hexo-theme-webstack-R</a>
+  </p>
+</footer>

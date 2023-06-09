@@ -1,0 +1,126 @@
+.sidebar-menu
+  position: fixed
+  top: 0
+  left: 0
+  bottom: 0
+  width: var(--menu-width)
+  font-size: 14px
+  background: var(--color-menu-bg)
+  z-index: 101
+  transition: width .2s ease-out
+
+.logo
+  height: calc(var(--header-height) + 12px)
+
+.logo-collapsed
+  display: none
+
+.main-menu
+  position: absolute
+  display: flex
+  flex-direction: column
+  top: calc(var(--header-height) + var(--gap))
+  left: 0
+  bottom: 1em
+  padding-left: unquote("max(40px, var(--menu-width) / 4)")
+  padding-right: 20px
+  width: 100%
+  overflow-x: hidden
+  -webkit-overflow-scrolling: touch
+  scrollbar-gutter: stable
+
+  .fa-angle-right:before
+    position: relative
+    float: right
+    right: 2px
+    color: #6d747a
+
+.has-sub > ul
+  display: none
+  padding-left: 2em
+.has-sub.open > ul
+  display: block
+
+.has-sub.open
+  & > .fa-angle-right:before
+    transform: rotate(90deg)
+
+.main-menu
+  a
+    color: var(--color-text)
+    display: block
+    height: 46px
+    line-height: 46px
+    border-bottom: 1px solid #313437
+    white-space: nowrap
+    cursor: pointer
+
+    &:hover
+      color: #fff
+
+.menu-title
+  margin-left: 10px
+
+.sidebar-collapsed
+  .logo-expanded
+    display: none
+  .logo-collapsed
+    display: block
+
+  .main-menu
+    padding: 0
+    text-align: center
+    // @TODO 会看不到hover的子菜单
+    overflow-x: unset
+    
+    // 滚动条宽度0 
+    // scrollbar-width: none
+    // &::-webkit-scrollbar
+    //   width: 0
+    
+    .menu-title
+        display: none !important
+    
+    > li:hover
+      .menu-icon
+        display: none !important
+      .menu-title
+        display: inline-block !important
+    
+    .has-sub > ul
+      .menu-icon
+      .menu-title
+        display: inline-block !important
+
+  .menu-icon
+    font-size: 17px
+    // vertical-align: middle
+
+  .has-sub
+    position: relative
+
+    &:hover > ul
+      display: block
+
+    > ul
+      position: absolute
+      top: 0
+      left: 100%
+      width: 230px
+      background: var(--color-menu-bg)
+      text-align: left
+      transition: none
+  
+  #busuanzi_value_site_pv,
+  #busuanzi_value_site_uv
+    position: absolute
+    left: var(--menu-width)
+    padding: 0 8px
+    background: var(--color-menu-bg)
+
+.submit-tag
+  margin-top: auto
+  
+  > a
+  ~ li > a
+    border-bottom: none

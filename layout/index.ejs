@@ -1,0 +1,14 @@
+<%
+  const setting = is_home() ? theme : Object.assign({}, theme, page, config);
+  <!-- console.log(page) -->
+%>
+<main class="content">
+  <% if(is_home()) { %>
+    <% if(setting.search){ %>
+      <%- partial('_partial/search') %>
+    <% } %>
+    <%- partial('_partial/group') %>
+  <% } else { %>
+    <%- partial('_partial/article') %>
+  <% } %>
+</main>

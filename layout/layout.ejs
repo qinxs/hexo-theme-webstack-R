@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="<%= config.language %>">
+<%
+  const setting = page ? Object.assign({}, theme, page, config) : theme;
+%>
+<head>
+  <%- partial('_partial/head', {setting: setting}) %>
+</head>
+
+<body>
+  <%- myjs(setting.js.config) %>
+  <%- partial('_partial/svg') %>
+  <div id="backdrop"></div>
+
+  <%- partial('_partial/sidebar-menu', {setting: setting}) %>
+
+  <div class="main-content">
+    <%- partial('_partial/header', {setting: setting}) %>
+    <%- body %>
+    <%- partial('_partial/footer', {setting: setting}) %>
+  </div>
+
+  <% if (setting.custom && setting.custom.body) { %>
+    <%- setting.custom.body %>
+  <% } %>
+
+  <div id="go-top">
+    <i class="far fa-arrow-alt-circle-up"></i>
+  </div>
+
+  <%- partial('_partial/js-area', {setting: setting}) %>
+</body>
+
+</html>

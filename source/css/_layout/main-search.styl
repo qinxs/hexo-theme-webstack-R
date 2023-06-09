@@ -1,0 +1,198 @@
+.search
+  position: relative
+  margin: 0 auto
+  padding: var(--gap) 0
+  max-width: 717px
+
+.search-box
+  position: relative
+  width: 100%
+  height: 50px
+  border: 1px solid var(--color-border)
+  background: var(--color-banner-bg)
+  border-radius: 10px
+
+.search-input
+  flex: 1
+  height: 100%
+  font-size: 16px
+  border: none
+  color: var(--color-text-strong)
+
+.search-box:focus
+.search-box:focus-within
+  border-color: #2188ff
+  box-shadow: 0 0 5px 0px rgba(71, 158, 245, 0.5)
+
+.search-hot-list.active:not(:empty) + .search-box
+  border-bottom-color: var(--color-border)
+  border-radius: 10px 10px 0 0
+
+.search-icon
+  padding-left: 6px
+  width: 40px
+  height: 40px
+  line-height: 40px
+  text-align: center
+  border-radius: 50%
+  cursor: pointer
+  
+  .iconfont
+    font-size: 24px
+
+.search-btn
+  padding: 1em
+  height: 100%
+  font-size: 18px
+  border-left: 1px solid var(--color-border)
+  border-radius: 0 10px 10px 0
+  cursor: pointer
+  
+  i
+    opacity: 0.6
+  
+  &:hover
+    i
+      opacity: 1
+  
+  & > *
+    display: none !important
+    
+  &[role=search-cards]
+    svg
+      display: unset !important
+
+  &[role=search-engine]
+    .fa-search
+      display: unset !important
+
+.search-engine
+  display: none
+  position: absolute
+  top: 90px
+  left: 0
+  width: 100%
+  background: var(--color-banner-bg)
+  padding: 10px
+  border-radius: 5px
+  box-shadow: var(--search-engine-shadow)
+  z-index: 20
+  
+  &::before
+    content: ''
+    width: 0px
+    height: 0px
+    position: absolute
+    top: -15px
+    left: 15px
+    border-top: 8px solid transparent
+    border-right: 8px solid transparent
+    border-bottom: 8px solid var(--color-banner-bg)
+    border-left: 8px solid transparent
+  // 防止mouserleave 消失
+  &::after
+    content: ''
+    width: 90px
+    height: 20px
+    position: absolute
+    top: -20px
+    left: 1px
+    
+.search-engine.active
+  display: block
+
+.search-engine-list
+  display: grid
+  margin: 8px 0
+  justify-content: space-between
+  grid-template-columns: repeat(3, 31.5%)
+  gap: 10px
+  
+  > li
+    padding: 5px
+    padding-left: 8px
+    font-size: 14px
+    color: #777
+    border: 1px dashed transparent
+    border-radius: 5px
+    background: var(--search-engine-item-bg)
+    letter-spacing: .1em
+    cursor: pointer
+    
+    &:hover
+      color: var(--color-text-strong)
+      border-color: rgba(#ff4500, .8)
+      background: var(--color-card-hover-bg)
+  
+  .iconfont
+    display: inline-block
+    margin-right: 2px
+    font-size: inherit
+    transform: scale(calc(16/14))
+
+.search-engine-tit
+  font-size: 14px
+  color: #777
+
+.search-engine-tool
+  float: right
+  font-size: 13px
+  color: #999
+
+.search-engine-tip
+  font-size: 13px
+  color: #999
+
+.search-hot-list
+  position: absolute
+  display: none
+  width: 100%
+  line-height: 32px
+  font-size: 14px
+  border: 1px solid #2188ff
+  border-top: none
+  background: var(--color-banner-bg)
+  border-radius: 0 0 10px 10px
+  overflow: hidden
+  z-index: 10
+  transform: translateY(50px) // search-box的高度
+  
+  &.active
+    display: block
+  
+  &:empty
+    display: none
+  
+  li
+    &:hover
+    &.active
+      background: var(--color-hotkeyword-item-hover-bg)
+      color: #2196f3
+      cursor: pointer
+  
+  .order
+    display: inline-block
+    margin: 0 4px 0 12px
+    width: 20px
+    height: 20px
+    line-height: 20px
+    text-align: center
+    border-radius: 50%
+    font-size: 12px
+    color: #999
+    background: #e5e5e5
+
+.search-hot-list
+  li:nth-child(1) > .order
+    color: #fff
+    background: #f54545
+  li:nth-child(2) > .order
+    color: #fff
+    background: #ff8547
+  li:nth-child(3) > .order
+    color: #fff
+    background: #ffac38
+
+.searched-cards
+  &:empty
+    display: none

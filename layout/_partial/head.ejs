@@ -1,0 +1,49 @@
+<%
+  var cdnPref = setting.cdn.pref;
+  var cdn = new URL(cdnPref).origin;
+%>
+<meta charset="utf-8">
+<meta http-equiv='x-dns-prefetch-control' content='on'>
+
+<% if (setting.cdn.enable) { %>
+  <link rel="preconnect" href="<%= cdn %>" crossorigin>
+  <link rel="dns-prefetch" href="<%= cdn %>">
+<% } %>
+
+<link rel="preconnect" href="https://lf6-cdn-tos.bytecdntp.com" crossorigin>
+<link rel="dns-prefetch" href="https://lf6-cdn-tos.bytecdntp.com">
+<link href="<%= setting.js.config %>" as="script">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title><%= setting.title %></title>
+<meta name="keywords" content="<%= setting.keywords %>">
+<meta name="description" content="<%= setting.description %>">
+<link rel="shortcut icon" href="<%= setting.favicon %>">
+
+<!-- / FB Open Graph -->
+<meta property="og:title" content="<%= setting.tittle || config.title %>">
+<meta property="og:type" content="website">
+<meta property="og:url" content="<%= url.replace(/\/index.html$/g, '/') %>">
+<meta property="og:description" content="<%= setting.description || config.description %>">
+
+<% if (setting.banner) { %>
+  <meta property="og:image" content="<%= setting.banner %>">
+<% } %>
+
+<%- mycss(Object.values(setting.css)) %>
+
+<% if (setting.search && page.__index) { %>
+  <%- css(setting.searchIconCSS) %>
+  <script defer src="<%- setting.js.search %>"></script>
+  <script defer src="<%- setting.js.PinyinMatch %>"></script>
+<% } %>
+
+<% if (setting.custom && setting.custom.head) { %>
+  <%- setting.custom.head %>
+<% } %>
+
+<% if (setting.js.SmoothScroll) { %>
+  <script defer src="<%- setting.js.SmoothScroll %>"></script>
+<% } %>
+
+<script defer src="<%- setting.js.app %>"></script>

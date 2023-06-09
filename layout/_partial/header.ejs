@@ -1,0 +1,38 @@
+<header>
+  <div class="banner mobile-banner">
+    <a href="/" class="btn mobile-logo">
+      <img src="<%= setting.logo.expanded %>" width="178"/>
+    </a>
+
+    <div class="btn show-setting-banner">
+      <i class="fas fa-cog"></i>
+    </div>
+
+    <div class="btn sidebar-mobile">
+      <i class="fas fa-bars"></i>
+    </div>
+  </div>
+
+  <div class="banner setting-banner mobile-hidden">
+    <div class="btn sidebar-collapse">
+      <i class="fas fa-bars"></i>
+    </div>
+
+    <div class="btn languages-switcher">
+      <img src="<%- url_for('/images/flags/' + setting.flag.icon + '.png') %>" alt="<%= setting.flag.icon %>" /> <%= setting.flag.name %>
+    </div>
+
+    <div class="btn theme-switcher dropdown flex-v-center">
+      <span class="lable"><i></i></span>
+      <ul class="dropdown-menu">
+        <li value="auto"><i class="fas fa-adjust"></i>跟随系统</li>
+        <li value="light"><i class="fas fa-sun"></i>浅色</li>
+        <li value="dark"><i class="far fa-moon"></i>深色</li>
+      </ul>
+    </div>
+
+    <% if (setting.githubCorner) { %>
+      <%- setting.githubCorner %>
+    <% } %>
+  </div>
+</header>

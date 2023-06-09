@@ -1,0 +1,126 @@
+*
+*::before
+*::after
+  box-sizing: border-box
+
+*
+  margin: 0
+  padding: 0
+
+:root
+  scrollbar-width: thin
+
+::-webkit-scrollbar-thumb
+  background: #ccc
+  cursor: pointer
+
+::-webkit-scrollbar-thumb:hover 
+  background: #979898
+
+body, html
+  height: 100%
+
+html
+  -webkit-tap-highlight-color: transparent
+
+body
+  font-size: 15px
+  color: var(--color-text)
+  background: var(--color-bg)
+  overflow-x: hidden
+  
+h4
+  margin: 1.5em 0
+
+ul
+  list-style-type: none
+
+a
+ text-decoration: none
+
+img
+  display: block
+  max-width: 100%
+
+svg
+  fill: currentColor
+
+i
+.icon
+  width: 1em
+  height: 1em
+
+:focus
+  outline: 0
+
+input
+  -webkit-appearance: none
+  font-size: inherit
+  background: var(--color-banner-bg)
+
+input::placeholder
+input::-webkit-input-placeholder
+  font-size: .95em
+  opacity: .5
+
+.backdrop
+  overflow: hidden
+
+#backdrop
+  opacity: 0
+  transition: opacity .2s
+
+.backdrop #backdrop
+  position: fixed
+  top: 0
+  left: 0
+  bottom: 0
+  right: 0
+  background: #000
+  overflow: hidden
+  z-index: 99
+  opacity: .7
+
+.btn
+  cursor: pointer
+
+.flex-v-center
+  display: flex
+  align-items: center
+
+.h-center
+  justify-content: center
+
+.hidden
+  display: none
+  
+#js-area
+  display: none
+
+#go-top
+  position: fixed
+  right: 15px
+  bottom: 36px
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 36px
+  height: 36px
+  font-size: 24px
+  border-radius: 15%
+  color: initial
+  opacity: .66
+  visibility: hidden
+
+  &:hover
+    background: #ccc
+    opacity: .8
+    
+.dark
+  img
+  .icon
+    filter: brightness(0.88)
+  
+  .anchor-tag
+  #go-top
+    filter: invert(1)

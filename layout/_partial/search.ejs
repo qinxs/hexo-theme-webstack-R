@@ -1,0 +1,31 @@
+<div class="search">
+  <!-- 搜索热词 -->
+  <ul class="box search-hot-list"></ul>
+
+  <div class="search-box flex-v-center h-center">
+    <lable class="search-icon"><i></i></lable>
+    <input type="text" class="search-input" autocomplete="off" placeholder="输入关键字，按回车 / Enter 搜索">
+    <lable class="search-btn flex-v-center h-center" id="search-btn" role="" title="点击切换 站内 / 搜索引擎 搜索">
+      <svg class="icon">
+        <use xlink:href="#svg-tag"/>
+      </svg>
+      <i class="fa fa-search"></i>
+    </lable>
+  </div>
+
+  <!-- 搜索引擎 -->
+  <div class="search-engine">
+    <div class="search-engine-head">
+      <span class="search-engine-tit">选择您的默认搜索引擎：</span>
+      <div class="search-engine-tool flex-v-center">
+        搜索热词： 
+        <input id="hot-keyword" name="hot-keyword" type="checkbox" hidden />
+        <label for="hot-keyword"></label>
+      </div>
+    </div>
+    <ul class="search-engine-list"></ul>
+    <div class="search-engine-tip mobile-hidden">提示：可以按住 CTRL 直接搜索</div>
+  </div>
+</div>
+
+<div class="group searched-cards"></div>
