@@ -117,6 +117,8 @@ const search = {
   },
 
   doSearch(searchEngine) {
+    event.preventDefault();
+
     if (!searchEngine) {
       searchEngine = config.search.engine;
     }
@@ -434,8 +436,8 @@ function hotskeyEvents(event) {
       }
       break;
     case "Enter":
-      if (document.activeElement == $searchInput) {
-        search.doSearch();
+      if (document.activeElement == document.body) {
+        $searchInput.focus();
       }
       break;
     case "Tab":
