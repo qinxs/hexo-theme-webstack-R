@@ -423,6 +423,10 @@ function hotskeyEvents(event) {
 
   switch (keyCode) {
     case "Escape":
+      if (document.activeElement != $searchInput) {
+        $searchInput.focus();
+        return;
+      }
       if (document.activeElement == $searchInput && $searchInput.value) {
         $searchInput.value = '';
         $searchInput.dispatchEvent(new Event('input'));
@@ -430,7 +434,9 @@ function hotskeyEvents(event) {
       }
       break;
     case "Enter":
-      search.doSearch();
+      if (document.activeElement == $searchInput) {
+        search.doSearch();
+      }
       break;
     case "Tab":
       if ($searchHotList.classList.contains('active')) {
