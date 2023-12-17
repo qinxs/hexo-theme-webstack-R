@@ -12,8 +12,7 @@
     <% if (setting.about) { %>
     <li class="submit-tag">
       <a href="<%= url_for(setting.about.url) %>" target="_blank">
-        <i class="menu-icon <%= setting.about.icon %>"></i>
-        <span class="menu-title"><%= setting.about.name %></span>
+        <i class="menu-icon <%= setting.about.icon %>"></i><span class="menu-title"><%= setting.about.name %></span>
       </a>
     </li>
     <% } %>
@@ -21,14 +20,12 @@
     <% if (setting.busuanzi.enable) { %>
     <li>
       <a>
-        <i class="menu-icon fas fa-users"></i>
-        <span id="busuanzi_container_site_uv" class="menu-title"><%- setting.busuanzi.uv.replace(/\$uv/i,'<span id="busuanzi_value_site_uv"></span>') %></span>
+        <i class="menu-icon fas fa-users"></i><span id="busuanzi_container_site_uv" class="menu-title"><%- setting.busuanzi.uv.replace(/\$uv/i,'<span id="busuanzi_value_site_uv"></span>') %></span>
       </a>
     </li>
     <li>
       <a>
-        <i class="menu-icon fas fa-eye"></i>
-        <span id="busuanzi_container_site_pv" class="menu-title"><%- setting.busuanzi.pv.replace(/\$pv/i,'<span id="busuanzi_value_site_pv"></span>') %></span>
+        <i class="menu-icon fas fa-eye"></i><span id="busuanzi_container_site_pv" class="menu-title"><%- setting.busuanzi.pv.replace(/\$pv/i,'<span id="busuanzi_value_site_pv"></span>') %></span>
       </a>
     </li>
     <% } %>

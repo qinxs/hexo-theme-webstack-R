@@ -59,7 +59,7 @@
       color: #fff
 
 .menu-title
-  margin-left: 10px
+  margin-left: 14px
 
 .sidebar-collapsed
   .logo-expanded
@@ -79,13 +79,18 @@
     //   width: 0
     
     .menu-title
-        display: none !important
+      display: none !important
+      
+    .fa-angle-right:before
+      position: absolute
     
     > li:hover
       .menu-icon
         display: none !important
       .menu-title
         display: inline-block !important
+      .fa-angle-right:before
+        display: none
     
     .has-sub > ul
       .menu-icon
@@ -94,7 +99,6 @@
 
   .menu-icon
     font-size: 17px
-    // vertical-align: middle
 
   .has-sub
     position: relative

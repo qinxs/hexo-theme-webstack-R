@@ -15,8 +15,7 @@ hexo.extend.helper.register('renderMenu', function (menuItems) {
         html.push('<li class="has-sub">');
         html.push(`
           <a class="fas fa-angle-right">
-            <i class="menu-icon ${item.icon}"></i>
-            <span class="menu-title">${item.name}</span>
+            <i class="menu-icon ${item.icon}"></i><span class="menu-title">${item.name}</span>
           </a>
           <ul>
         `);
@@ -31,8 +30,7 @@ hexo.extend.helper.register('renderMenu', function (menuItems) {
         html.push('<li>');
         html.push(`
           <a ${attribute}>
-            <i class="menu-icon ${item.icon}"></i>
-            <span class="menu-title">${item.name}</span>
+            <i class="menu-icon ${item.icon}"></i><span class="menu-title">${item.name}</span>
           </a>
         `);
       }
