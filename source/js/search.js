@@ -125,8 +125,6 @@ const search = {
     var value = $searchInput.value;
     if (value) {
       window.open(searchEngines[searchEngine].url + value);
-    } else {
-      $searchInput.focus();
     }
   },
 
@@ -426,6 +424,8 @@ function hotskeyEvents(event) {
   switch (keyCode) {
     case "Escape":
       if (document.activeElement != $searchInput) {
+        var isBlocked = $searchBox.getBoundingClientRect().top < 0;
+        isBlocked && $searchBox.scrollIntoView();
         $searchInput.focus();
         return;
       }
@@ -436,7 +436,10 @@ function hotskeyEvents(event) {
       }
       break;
     case "Enter":
-      if (document.activeElement == document.body) {
+      if (document.activeElement != $searchInput && !document.activeElement.closest('.card')) {
+        event.preventDefault();
+        var isBlocked = $searchBox.getBoundingClientRect().top < 0;
+        isBlocked && $searchBox.scrollIntoView();
         $searchInput.focus();
       }
       break;
