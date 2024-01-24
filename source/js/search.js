@@ -98,8 +98,7 @@ const search = {
     for (let key in searchEngines) {
       html.push(`
         <li value="${key}">
-          <i class="iconfont ${searchEngines[key].icon}"></i>
-          ${key.replace('_', '')}
+          <i class="iconfont ${searchEngines[key].icon}"></i>${key.replace('_', '')}
         </li>
       `);
     }
