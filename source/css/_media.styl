@@ -11,6 +11,25 @@
     --card-cols: 3
     --menu-width: 230px
 
+// 手机端 hover 点击后无法取消样式
+@media (pointer: fine)
+  #go-top:hover
+    background: #ccc
+    opacity: .8
+  .card
+    &:hover, &:focus, &:focus-within
+      border: 1px dashed rgba(#ff4500, .7)
+      background: var(--color-card-hover-bg)
+      transform: translateY(-6px)
+      .title
+        color: #ff4500
+      .description
+        -webkit-line-clamp: 3
+@media (pointer: coarse)
+  #go-top:active
+    background: #ccc
+    opacity: .8
+
 @media screen and (max-width: $device-mobile-l)
   :root
     --card-cols: 2
