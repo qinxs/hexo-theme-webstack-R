@@ -122,7 +122,7 @@ function scrollToHash(hash) {
         document.body.classList.remove('sidebar-mobile-show');
         backdrop.close();
       }
-    } catch {}   
+    } catch {}
 
     window.scroll({
       top: getTotalOffsetTop($anchorEle) - fixedHeaderHeight,
@@ -207,6 +207,14 @@ $sidebarMobile.addEventListener('click', () => {
 
 $showSettingBanner.addEventListener('click', () => {
   $('.setting-banner').classList.toggle('mobile-hidden');
+});
+
+$('.content').addEventListener('click', event => {
+  var $card = event.target.closest('.card');
+  if ($card) {
+    document.activeElement.blur();
+    event.stoppropagation();
+  }
 });
 
 const themeSwitcher = new DropdownMenu($('.theme-switcher'), config.themeColor);
