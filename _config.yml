@@ -1,8 +1,8 @@
 favicon: /images/favicon.ico
-banner: https://cdn.jsdelivr.net/gh/qinxs/cdn-assets@master/img/logo-social.png
+banner: https://gcore.jsdelivr.net/gh/qinxs/cdn-assets@master/img/logo-social.png
 
 logo:
-  # expanded: https://cdn.jsdelivr.net/gh/qinxs/cdn-assets@master/webstack/images/logo.svg
+  # expanded: https://gcore.jsdelivr.net/gh/qinxs/cdn-assets@master/webstack/images/logo.svg
   expanded: /images/logo.svg
   collapsed: /images/logo-collapsed.svg
   dark: /images/logo_dark@2x.png
