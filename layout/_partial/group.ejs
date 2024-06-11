@@ -7,7 +7,7 @@
   <div class="group">
     <% group.links.forEach(function(links) { %>
       <div class="card">
-        <a href="<%- url_for(links.url) %>">
+        <a target="_blank" rel="noopener" href="<%- url_for(links.url) %>">
           <img class="lozad" data-src="<%- url_for(links.img || '/images/sitelogo/default.png') %>">
           <div>
             <strong class="title"><%= links.name %></strong>
