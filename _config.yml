@@ -57,10 +57,10 @@ js:
   app: /js/app.js
   search: /js/search.js
   PinyinMatch: /js/pinyin-match.min.js
-  lozad: https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-y/lozad.js/1.16.0/lozad.min.js
-  SmoothScroll: https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-y/iamdustan-smoothscroll/0.4.0/smoothscroll.min.js
+  lozad: https://cdn.bootcdn.net/ajax/libs/lozad.js/1.16.0/lozad.min.js
+  SmoothScroll: https://cdn.bootcdn.net/ajax/libs/iamdustan-smoothscroll/0.4.0/smoothscroll.min.js
   busuanzi: https://cdn.bootcdn.net/ajax/libs/busuanzi/2.3.0/bsz.pure.mini.min.js
 
 css:
   style: /css/style.css
-  fontawesome: https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-y/font-awesome/5.15.4/css/all.min.css
+  fontawesome: https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.4/css/all.min.css
