@@ -213,7 +213,7 @@ $('.content').addEventListener('click', event => {
   var $card = event.target.closest('.card');
   if ($card) {
     document.activeElement.blur();
-    event.stoppropagation();
+    event.stopPropagation();
   }
 });
 

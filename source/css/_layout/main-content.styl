@@ -152,15 +152,18 @@ footer
   .title
     font-size: 14px
     color: var(--color-text-strong)
+    -webkit-line-clamp: 1
 
   .description
     margin-right: 15px
     font-size: 13px
     color: var(--color-text)
+    -webkit-line-clamp: 2
+
+  .title, .description
     overflow: hidden
     text-overflow: ellipsis
     display: -webkit-box
-    -webkit-line-clamp: 2
     -webkit-box-orient: vertical
-    word-break: break-word
+    word-break: break-all
     white-space: pre-line
